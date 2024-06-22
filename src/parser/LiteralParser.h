@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LITERALPARSER_H
+#define LITERALPARSER_H
 
 #include "Parser.h"
 
@@ -21,3 +22,5 @@ namespace parser {
         }
     };
 }
+
+#endif //LITERALPARSER_H

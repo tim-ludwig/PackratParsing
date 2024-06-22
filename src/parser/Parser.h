@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PARSER_H
+#define PARSER_H
 
 #include <optional>
 #include <string_view>
@@ -17,3 +18,5 @@ namespace parser {
 		virtual Result parse(std::string_view const& text) const = 0;
 	};
 }
+
+#endif //PARSER_H
