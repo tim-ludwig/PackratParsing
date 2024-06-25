@@ -13,13 +13,7 @@ namespace parser {
     public:
         LiteralParser(const std::string _expected) : expected{_expected} {}
 
-        Result parse(std::string_view const& text) const override {
-            if (!text.starts_with(expected)) {
-                return std::nullopt;
-            }
-
-            return Match{text.substr(0, expected.size())};
-        }
+        Result parse(std::string_view const& text) const override;
     };
 }
 
