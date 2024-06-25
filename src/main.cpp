@@ -5,13 +5,16 @@
 #include "parser/SequenceParser.h"
 
 int main() {
-    auto h = new parser::LiteralParser{"Hello, "};
-    auto w = new parser::LiteralParser{"World!"};
-    auto hw = h->then(w);
+    auto h1 = new parser::LiteralParser{"Hello, "};
+    auto w1 = new parser::LiteralParser{"World!"};
+    auto h2 = new parser::LiteralParser{"Hallo, "};
+    auto w2 = new parser::LiteralParser{"Welt!"};
 
-    const std::string s = "Hello, World!";
+    auto p = h1->and_then(w1)->or_else(h2->and_then(w2));
 
-    if (const auto result = hw->parse(s); result.has_value()) {
+    const std::string s = "Hallo, Welt!";
+
+    if (const auto result = p->parse(s); result.has_value()) {
         std::cout << "Matched: '" << result.value().matched << "'" << std::endl;
         std::cout << "Remaining: '" << result.value().remaining << "'" << std::endl;
     } else {

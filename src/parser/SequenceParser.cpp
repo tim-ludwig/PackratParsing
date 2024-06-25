@@ -19,7 +19,7 @@ namespace parser {
         return Match(text, length);
     }
 
-    Parser* SequenceParser::then(Parser const* next) {
+    Parser* SequenceParser::and_then(Parser const* next) {
         parsers.push_back(next);
         return this;
     }

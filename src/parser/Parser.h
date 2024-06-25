@@ -13,7 +13,7 @@ namespace parser {
 
 		Match(const std::string_view text, size_t match_length)
 			: matched{text.substr(0, match_length)},
-		      remaining(text.substr(match_length))
+		      remaining{text.substr(match_length)}
 		{
 
 		}
@@ -27,7 +27,8 @@ namespace parser {
 
 		virtual Result parse(std::string_view const& text) const = 0;
 
-		virtual Parser* then(Parser const* next);
+		virtual Parser* and_then(Parser const* next);
+		virtual Parser* or_else(Parser const* alternative);
 	};
 }
 

@@ -16,7 +16,7 @@ namespace parser {
 
         Result parse(std::string_view const& text) const override;
 
-        virtual Parser* then(Parser const* next) override;
+        Parser* and_then(Parser const* next) override;
     };
 }
 

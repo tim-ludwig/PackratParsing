@@ -11,4 +11,6 @@ add_executable(PackratParsing
         src/parser/SequenceParser.h
         src/parser/SequenceParser.cpp
         src/parser/LiteralParser.cpp
+        src/parser/ChoiceParser.cpp
+        src/parser/ChoiceParser.h
 )
