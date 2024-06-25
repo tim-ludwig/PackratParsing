@@ -12,7 +12,8 @@ int main() {
     const std::string s = "Hello, World!";
 
     if (const auto result = hw->parse(s); result.has_value()) {
-        std::cout << "Matched: " << result.value().text << std::endl;
+        std::cout << "Matched: '" << result.value().matched << "'" << std::endl;
+        std::cout << "Remaining: '" << result.value().remaining << "'" << std::endl;
     } else {
         std::cout << "No match" << std::endl;
     }

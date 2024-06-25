@@ -6,8 +6,17 @@
 #include <string_view>
 
 namespace parser {
-	struct Match {
-		const std::string_view text;
+	class Match {
+	public:
+		const std::string_view matched;
+		const std::string_view remaining;
+
+		Match(const std::string_view text, size_t match_length)
+			: matched{text.substr(0, match_length)},
+		      remaining(text.substr(match_length))
+		{
+
+		}
 	};
 
 	using Result = std::optional<Match>;
