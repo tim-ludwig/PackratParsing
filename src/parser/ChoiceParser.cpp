@@ -1,7 +1,3 @@
-//
-// Created by tludwig on 25/06/24.
-//
-
 #include "ChoiceParser.h"
 
 namespace parser {
